@@ -6,8 +6,8 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
-Author 1
-Author 2
+Tim Riedel
+Sofia Williams
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -17,10 +17,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+The Goal of this code is to help individuals self diagnose if they have general anxiety conditions. This code should not be a definitive diagnosis, but could help people seek help should they need it. 
  
 Known Issues:
-blah, blah, blah, blah
+Content isn't full updated, no image. 
 -->
 
    <head> 
@@ -34,27 +34,27 @@ blah, blah, blah, blah
 
 
 <script>
-        var allergy_count = 0;//Variable established for allergy count
-        var cold_count = 0;//Variable established for cold count
-        function allergyAdd(){//when button for allergy is clicked, program will add one to allergy count
-            allergy_count = allergy_count + 1;
+        var anxiety_count = 0;//Variable established for anxiety count
+        var noanxiety_count = 0;//Variable established for no anxiety count
+        function allergyAdd(){//when button for anxiety is clicked, program will add one to anxiety count
+            anxiety_count = anxiety_count + 1;
         }
-        function coldAdd(){//when button for allergy is clicked, program will add one to cold count
-            cold_count = cold_count + 1;
+        function noanxietyAdd(){//when button for no anxiety is clicked, program will add one to no anxiety count
+            noanxiety_count = noanxiety_count + 1;
 	
 	
         }
-	function allergyPercent(){
-		allergyPercent = allergy_count/6*100; //Added the function percent for allergy calculation//changed function from 4 to 6
+	function anxietyPercent(){
+		anxietyPercent = anxiety_count/6*100; //Added the function percent for anxiety calculation//changed function from 4 to 6
 	}
-	function coldPercent(){
-		coldPercent = cold_count/6*100; //Added the function percent for colds calculation //changed function from 4 to 6
+	function noanxietyPercent(){
+		noanxietyPercent = noanxiety_count/6*100; //Added the function percent for no anxiety calculation //changed function from 4 to 6
 	}
 	function results(){
 		allergyPercent();//displays allergy percent probability
-		coldPercent();//displays cold percent probability
+		noanxietyPercent();//displays noanxiety percent probability
 		var resultText = document.getElementById("results");//this ties java programming into html part
-		resultText.innerHTML = " Probability it is allergies =" + allergyPercent + "%<br> Probability it is a cold =" + coldPercent + "%";//Added the probability functions for both cold and allergy and tied it to html code
+		resultText.innerHTML = " Probability it is allergies =" + allergyPercent + "%<br> Probability it is a noanxiety =" + noanxietyPercent + "%";//Added the probability functions for both noanxiety and allergy and tied it to html code
 	}
   </script>
 
@@ -102,7 +102,7 @@ blah, blah, blah, blah
     	<div id="content" class="w3-container">
         <p>Are your eyes watery or itchy?</p>    
 	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a><!--button adds one to allergy count-->
-	<a href="#two" onclick="coldAdd();" class="w3-btn w3-black"> No </a><!--button adds one to cold count-->	
+	<a href="#two" onclick="noanxietyAdd();" class="w3-btn w3-black"> No </a><!--button adds one to noanxiety count-->	
 		<!--attempted to make button & changed questions content-->
     	</div>
 </div>
