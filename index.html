@@ -36,7 +36,7 @@ Content isn't full updated, no image.
 <script>
         var anxiety_count = 0;//Variable established for anxiety count
         var noanxiety_count = 0;//Variable established for no anxiety count
-        function allergyAdd(){//when button for anxiety is clicked, program will add one to anxiety count
+        function anxietyAdd(){//when button for anxiety is clicked, program will add one to anxiety count
             anxiety_count = anxiety_count + 1;
         }
         function noanxietyAdd(){//when button for no anxiety is clicked, program will add one to no anxiety count
@@ -51,10 +51,10 @@ Content isn't full updated, no image.
 		noanxietyPercent = noanxiety_count/6*100; //Added the function percent for no anxiety calculation //changed function from 4 to 6
 	}
 	function results(){
-		allergyPercent();//displays allergy percent probability
+		anxietyPercent();//displays anxiety percent probability
 		noanxietyPercent();//displays noanxiety percent probability
 		var resultText = document.getElementById("results");//this ties java programming into html part
-		resultText.innerHTML = " Probability it is allergies =" + allergyPercent + "%<br> Probability it is a noanxiety =" + noanxietyPercent + "%";//Added the probability functions for both noanxiety and allergy and tied it to html code
+		resultText.innerHTML = " Probability you have anxiety =" + anxietyPercent + "%<br> Probability you don't have anxiety =" + noanxietyPercent + "%";//Added the probability functions for both no anxiety and anxiety and tied it to html code
 	}
   </script>
 
