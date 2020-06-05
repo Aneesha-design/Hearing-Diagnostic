@@ -34,110 +34,11 @@ None that I know of! For some reason when I tried adding a comment for the resiz
 
 
 <script>
-        var anxiety_count = 0;//Variable established for anxiety count
-        var noanxiety_count = 0;//Variable established for no anxiety count
-        function anxietyAdd(){//when button for anxiety is clicked, program will add one to anxiety count
-            anxiety_count = anxiety_count + 1;
-        }
-        function noanxietyAdd(){//when button for no anxiety is clicked, program will add one to no anxiety count
-            noanxiety_count = noanxiety_count + 1;
-	
-	
-        }
-	function anxietyPercent(){
-		anxietyPercent = anxiety_count/6*100; //Added the function percent for anxiety calculation//changed function from 4 to 6
+	function playBeep {
+   var context = new AudioContext()
+	var o = context.createOscillator()
+	o.type = "sine"
+	o.connect(context.destination)
+	o.start()
 	}
-	function noanxietyPercent(){
-		noanxietyPercent = noanxiety_count/6*100; //Added the function percent for no anxiety calculation //changed function from 4 to 6
-	}
-	function results(){
-		anxietyPercent();//displays anxiety percent probability
-		noanxietyPercent();//displays noanxiety percent probability
-		var resultText = document.getElementById("results");//this ties java programming into html part
-		resultText.innerHTML = " Probability you have anxiety =" + anxietyPercent + "%<br> Probability you don't have anxiety =" + noanxietyPercent + "%";//Added the probability functions for both no anxiety and anxiety and tied it to html code
-	}
-	// Original JavaScript code by Chirp Internet: www.chirp.com.au
-// Please acknowledge use of this code by including this header.
-
-function SoundPlayer(audioContext, filterNode) {
-  this.audioCtx = audioContext;
-  this.gainNode = this.audioCtx.createGain();
-  if(filterNode) {
-    // run output through extra filter (already connected to audioContext)
-    this.gainNode.connect(filterNode);
-  } else {
-    this.gainNode.connect(this.audioCtx.destination);
-  }
-  this.oscillator = null;
-}
-
-SoundPlayer.prototype.setFrequency = function(val, when) {
-  if(when) {
-    this.oscillator.frequency.setValueAtTime(val, this.audioCtx.currentTime + when);
-  } else {
-    this.oscillator.frequency.setValueAtTime(val, this.audioCtx.currentTime);
-  }
-  return this;
-};
-
-SoundPlayer.prototype.setVolume = function(val, when) {
-  if(when) {
-    this.gainNode.gain.exponentialRampToValueAtTime(val, this.audioCtx.currentTime + when);
-  } else {
-    this.gainNode.gain.setValueAtTime(val, this.audioCtx.currentTime);
-  }
-  return this;
-};
-
-SoundPlayer.prototype.setWaveType = function(waveType) {
-  this.oscillator.type = waveType;
-  return this;
-};
-
-SoundPlayer.prototype.play = function(freq, vol, wave, when) {
-  this.oscillator = this.audioCtx.createOscillator();
-  this.oscillator.connect(this.gainNode);
-  this.setFrequency(freq);
-  if(wave) {
-    this.setWaveType(wave);
-  }
-  this.setVolume(1/1000);
-  if(when) {
-    this.setVolume(1/1000, when - 0.02);
-    this.oscillator.start(when - 0.02);
-    this.setVolume(vol, when);
-  } else {
-    this.oscillator.start();
-    this.setVolume(vol, 0.02);
-  }
-  return this;
-};
-
-SoundPlayer.prototype.stop = function(when) {
-  if(when) {
-    this.gainNode.gain.setTargetAtTime(1/1000, this.audioCtx.currentTime + when - 0.05, 0.02);
-    this.oscillator.stop(this.audioCtx.currentTime + when);
-  } else {
-    this.gainNode.gain.setTargetAtTime(1/1000, this.audioCtx.currentTime, 0.02);
-    this.oscillator.stop(this.audioCtx.currentTime + 0.05);
-  }
-  return this;
-};
-	
-<script src="/soundplayer.js"></script>
-<script>
-
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-  const audio = new AudioContext();
-
-  const playNote = (e) => {
-    // play note according to data-frequency attribute
-    (new SoundPlayer(audio)).play(e.target.dataset.frequency, 0.8, "sine").stop(0.5);
-    e.cancelBubble = true;
-  };
-
-  for(let el of document.getElementById("piano").getElementsByTagName("DIV")) {
-    el.addEventListener("click", playNote, false);
-  }
-
 </script>
