@@ -39,13 +39,13 @@ None that I know of! For some reason when I tried adding a comment for the resiz
    	var context = new AudioContext()
 	var o = context.createOscillator()
 	var g = context.createGain()
-	var frequency = 440
+	var frequency = 830.6
 	o.frequency.value = frequency 
 	o.connect(g)
 	g.connect(context.destination)
 	o.start(0)
 		g.gain.exponentialRampToValueAtTime(
- 		0.00001, context.currentTime + 40)
+ 		0.00001, context.currentTime + 30)
 	}
 	
 	//these functions add one to variable count based on user answers
