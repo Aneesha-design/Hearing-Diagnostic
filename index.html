@@ -45,9 +45,15 @@ None that I know of! For some reason when I tried adding a comment for the resiz
 		g.gain.exponentialRampToValueAtTime(
  		0.00001, context.currentTime + 20)
 	}
+	
+	//these functions add one to variable count based on user answers
 	var yes1 = 0
 	function yesAdd1(){
 		yes1 + 1
+	}
+	var no1 = 0
+	function noAdd1(){
+		no1 + 1
 	}
 </script>
 <style>	
@@ -95,7 +101,8 @@ None that I know of! For some reason when I tried adding a comment for the resiz
 	<a href="#one" onclick="playBeep();" class="w3-btn w3-black"> Play </a><!--button starts beeping noise-->
 	<!--<a href="#one" onclick="stopBeep();" class="w3-btn w3-black"> Stop </a><!--button stops beeping noise (doesnt work yet)-->	
 	<p> Were you able to hear the sound? </p> 
-	<a href="#one" onclick="yesAdd1();" class="w3-btn w3-black"> Yes </a><!--button adds one to yes count-->	
+	<a href="#two" onclick="yesAdd1();" class="w3-btn w3-black"> Yes </a><!--button adds one to yes count-->	
+	<a href="#two" onclick="noAdd1();" class="w3-btn w3-black"> No </a><!--button adds one to no count-->
     	</div>
 </div>
 	<footer class="w3-bottom w3-container w3-flat-carrot">
