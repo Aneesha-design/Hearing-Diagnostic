@@ -41,10 +41,10 @@ None that I know of! For some reason when I tried adding a comment for the resiz
 	var g = context.createGain()
 	o.connect(g)
 	g.connect(context.destination)
-	o.start()
+	o.start(0)
 	}
 	function stopBeep(){
-	o.gain.exponentialRampToValueAtTime(
+	g.gain.exponentialRampToValueAtTime(
  		0.00001, context.currentTime + 0.04)
 	}
 </script>
