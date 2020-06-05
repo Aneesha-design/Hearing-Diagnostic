@@ -42,13 +42,12 @@ None that I know of! For some reason when I tried adding a comment for the resiz
 	o.connect(g)
 	g.connect(context.destination)
 	o.start(0)
-		g.gain.exponentialRampToValueAtTime(
- 		0.00001, context.currentTime + 20)
+		//g.gain.exponentialRampToValueAtTime(
+ 		//0.00001, context.currentTime + 20)
 	}
-	//function stopBeep(){
-	//g.gain.exponentialRampToValueAtTime(
- 	//	0.00001, context.currentTime + 0.04)
-	//}
+	function stopBeep(){
+	o.stop() 
+	}
 </script>
 <style>	
 .body {
@@ -93,7 +92,7 @@ None that I know of! For some reason when I tried adding a comment for the resiz
     	<div id="content" class="w3-container">
         <p>Can you hear this sound?</p>    
 	<a href="#one" onclick="playBeep();" class="w3-btn w3-black"> Play </a><!--button starts beeping noise-->
-	<!--<a href="#one" onclick="stopBeep();" class="w3-btn w3-black"> Stop </a><!--button stops beeping noise (doesnt work yet)-->	
+	<a href="#one" onclick="stopBeep();" class="w3-btn w3-black"> Stop </a><!--button stops beeping noise (doesnt work yet)-->	
 		<!--attempted to make button & changed questions content-->
     	</div>
 </div>
