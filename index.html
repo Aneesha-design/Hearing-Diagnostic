@@ -60,11 +60,11 @@ None that I know of!
 	
 	
 	//imported decibel functions
-	var gain = 1; 
+	let gain = 1; 
 	let dbfs = 20 * Math.log10(gain);
 	let gain = Math.pow(10, dbfs / 20);
 	
-	function dBFSToGain(dbfs) {  Run / Edit
+	function dBFSToGain(dbfs) {  
   	return Math.pow(10, dbfs / 20);
 	}
 
