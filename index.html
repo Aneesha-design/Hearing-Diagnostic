@@ -80,7 +80,7 @@ None that I know of
 	
 	// Drop to -12 dBFS at ~1s
 	gain.gain.setValueAtTime(1, 1 - 0.03);
-	gain.gain.linearRampToValueAtTime(dBFSToGain(-80), 1)
+	gain.gain.linearRampToValueAtTime(dBFSToGain(-90), 1)
 	// Drop to -24 dBFS at ~2s
 	gain.gain.setValueAtTime(dBFSToGain(-12), 2 - 0.03)
 	gain.gain.linearRampToValueAtTime(dBFSToGain(-24), 2)
