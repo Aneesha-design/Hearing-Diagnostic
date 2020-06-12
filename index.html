@@ -20,7 +20,7 @@ Brief Description of Goal of Code:
 The Goal of this code is to help individuals self diagnose if they have hearing loss. This code should not be a definitive diagnosis, but could help people seek help should they need it. 
  
 Known Issues:
-None that I know of! 
+None that I know of
 -->
 
    <head> 
@@ -60,33 +60,17 @@ None that I know of!
 	
 	
 	//imported decibel functions
-	let gain = 1; 
-	let dbfs = 20 * Math.log10(gain);
-	let gain = Math.pow(10, dbfs / 20);
-	
-	function dBFSToGain(dbfs) {  
-  	return Math.pow(10, dbfs / 20);
-	}
 
 	function decibel(){
-	let audioCtx = new AudioContext();
+	let audioCtx = new AudioContext Run / Edit
 
 	// Create nodes
-
 	let osc = audioCtx.createOscillator();
 	let gain = audioCtx.createGain();
 
 	// Set parameters
 	osc.frequency.value = 440;
-	gain.gain.value = 1;
-
-	// Schedule parameter changes
-	// Drop to -12 dBFS at ~1s
-	gain.gain.setValueAtTime(1, 1 - 0.03);
-	gain.gain.linearRampToValueAtTime(dBFSToGain(-12), 1);
-	// Drop to -24 dBFS at ~2s
-	gain.gain.setValueAtTime(dBFSToGain(-12), 2 - 0.03);
-	gain.gain.linearRampToValueAtTime(dBFSToGain(-24), 2);
+	gain.gain.value = 0.5;
 
 	// Connect graph
 	osc.connect(gain);
@@ -94,7 +78,7 @@ None that I know of!
 
 	// Schedule start and stop
 	osc.start();
-	osc.stop(audioCtx.currentTime + 3);
+	osc.stop(audioCtx.currentTime + 2);
 	}
 	
 </script>
@@ -142,7 +126,7 @@ None that I know of!
         <p>Press the button below to hear the first sound. </p>    
 	<a href="#one" onclick="playBeep();" class="w3-btn w3-black"> Play </a><!--button starts beeping noise-->
 	<a href="#one" onclick="decibel();" class="w3-btn w3-black"> Decibel Fcn Test </a><!--button starts beeping noise-->
-	<!--<a href="#one" onclick="stopBeep();" class="w3-btn w3-black"> Stop </a><!--button stops beeping noise (doesnt work yet)-->	
+	
 	<p> Were you able to hear the sound? </p> 
 	<a href="#two" onclick="yesAdd1();" class="w3-btn w3-black"> Yes </a><!--button adds one to yes count-->	
 	<a href="#two" onclick="noAdd1();" class="w3-btn w3-black"> No </a><!--button adds one to no count-->
