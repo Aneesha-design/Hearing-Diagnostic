@@ -60,7 +60,11 @@ None that I know of
 	
 	
 	//imported decibel functions
-
+	function dBFSToGain(dbfs) {  
+  	return Math.pow(10, dbfs / 20);
+	}
+	
+	
 	function decibel(){
 	let audioCtx = new AudioContext()
 
@@ -73,10 +77,13 @@ None that I know of
 	gain.gain.value = 0.5
 	
 	// Schedule parameter changes
-	// Start ramping up to 1 right away, with a suitable time
-	// constant.
-	gain.gain.setValueAtTime(0, 0);
-	gain.gain.setTargetAtTime(1, 0, 5);
+	
+	// Drop to -12 dBFS at ~1s
+	gain.gain.setValueAtTime(1, 1 - 0.03);
+	gain.gain.linearRampToValueAtTime(dBFSToGain(-12), 1)
+	// Drop to -24 dBFS at ~2s
+	gain.gain.setValueAtTime(dBFSToGain(-12), 2 - 0.03)
+	gain.gain.linearRampToValueAtTime(dBFSToGain(-24), 2)
 
 	// Connect graph
 	osc.connect(gain)
