@@ -62,23 +62,23 @@ None that I know of
 	//imported decibel functions
 
 	function decibel(){
-	let audioCtx = new AudioContext Run / Edit
+	let audioCtx = new AudioContext()
 
 	// Create nodes
-	let osc = audioCtx.createOscillator();
-	let gain = audioCtx.createGain();
+	let osc = audioCtx.createOscillator()
+	let gain = audioCtx.createGain()
 
 	// Set parameters
-	osc.frequency.value = 440;
-	gain.gain.value = 0.5;
+	osc.frequency.value = 440
+	gain.gain.value = 0.5
 
 	// Connect graph
-	osc.connect(gain);
-	gain.connect(audioCtx.destination);
+	osc.connect(gain)
+	gain.connect(audioCtx.destination)
 
 	// Schedule start and stop
-	osc.start();
-	osc.stop(audioCtx.currentTime + 2);
+	osc.start()
+	osc.stop(audioCtx.currentTime + 2)
 	}
 	
 </script>
