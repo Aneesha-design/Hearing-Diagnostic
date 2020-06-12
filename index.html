@@ -71,6 +71,12 @@ None that I know of
 	// Set parameters
 	osc.frequency.value = 440
 	gain.gain.value = 0.5
+	
+	// Schedule parameter changes
+	// Start ramping up to 1 right away, with a suitable time
+	// constant.
+	gain.gain.setValueAtTime(0, 0);
+	gain.gain.setTargetAtTime(1, 0, 5);
 
 	// Connect graph
 	osc.connect(gain)
