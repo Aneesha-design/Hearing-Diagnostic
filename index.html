@@ -97,7 +97,10 @@ None that I know of
 	panNode.connect(audioCtx.destination) 
 	
 	// Schedule start and stop
-	osc.start()
+	//osc.start()
+		osc.start(0)
+		panNode.gain.exponentialRampToValueAtTime(
+ 		0.00001, context.currentTime + 5)
 	osc.stop(audioCtx.currentTime + 2)
 	}
 	
