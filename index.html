@@ -86,9 +86,18 @@ None that I know of
 	gain.gain.linearRampToValueAtTime(dBFSToGain(-24), 2)
 
 	// Connect graph
+	//osc.connect(gain)
+	//gain.connect(audioCtx.destination)
+		
+	//Creating Stereo Panner to Output on L Headphone
+	var panNode = audioCtx.createStereoPanner()
+	panNode.pan.value = -1
+	
+	//Connect graph
 	osc.connect(gain)
-	gain.connect(audioCtx.destination)
-
+	gain.connect(panNode)
+	panNode.connect(audioCtx.destination) 
+	
 	// Schedule start and stop
 	osc.start()
 	osc.stop(audioCtx.currentTime + 2)
