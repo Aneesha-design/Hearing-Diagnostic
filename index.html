@@ -74,18 +74,13 @@ None that I know of
 
 	// Set parameters
 	osc.frequency.value = 125
-	gain.gain.value = 0.01
+	gain.gain.value = 0.001
 	
 	// Schedule parameter changes
 	
 	// Drop to -12 dBFS at ~1s
 	gain.gain.setValueAtTime(1, 1 - 0.03);
 	gain.gain.linearRampToValueAtTime(dBFSToGain(-100), 1)
-
-
-	// Connect graph
-	//osc.connect(gain)
-	//gain.connect(audioCtx.destination)
 		
 	//Creating Stereo Panner to Output on L Headphone
 	var panNode = audioCtx.createStereoPanner()
