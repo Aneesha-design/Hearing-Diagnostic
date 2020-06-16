@@ -80,7 +80,7 @@ None that I know of
 	
 	// Drop to -12 dBFS at ~1s
 	gain.gain.setValueAtTime(1, 1 - 0.03);
-	gain.gain.linearRampToValueAtTime(dBFSToGain(-100), 1)
+	gain.gain.linearRampToValueAtTime(dBFSToGain(-100), 0.5)
 		
 	//Creating Stereo Panner to Output on L Headphone
 	var panNode = audioCtx.createStereoPanner()
