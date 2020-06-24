@@ -65,7 +65,7 @@ None that I know of
 	}
 	
 	
-	function decibel(){
+	function decibel(dbfs){
 	let audioCtx = new AudioContext()
 
 	// Create nodes
@@ -74,7 +74,7 @@ None that I know of
 
 	// Set parameters
 	osc.frequency.value = 125
-	gain.gain.value = 0.001
+	gain.gain.value = 1
 	
 	// Schedule parameter changes
 	
