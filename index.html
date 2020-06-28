@@ -34,19 +34,6 @@ None that I know of
 
 
 <script>
-	//this function plays a beep noise
-	function playBeep() {
-   	var context = new AudioContext()
-	var o = context.createOscillator()
-	var g = context.createGain()
-	var frequency = 830.6
-	o.frequency.value = frequency 
-	o.connect(g)
-	g.connect(context.destination)
-	o.start(0)
-		g.gain.exponentialRampToValueAtTime(
- 		0.00001, context.currentTime + 5)
-	}
 	
 	//these functions add one to variable count based on user answers
 	var yes1 = 0
@@ -135,9 +122,9 @@ None that I know of
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
-	<p style="color:black;font-size:8px;">The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+	<p style="color:black;font-size:12px;">The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
-	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+	<p style="color:black;font-size:14px;">THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
@@ -177,8 +164,7 @@ None that I know of
 	
     	<div id="content" class="w3-container">
         <p>Press the button below to hear the first sound. </p>    
-	<a href="#one" onclick="playBeep();" class="w3-btn w3-black"> Play </a><!--button starts beeping noise-->
-	<a href="#one" onclick="decibel();" class="w3-btn w3-black"> Decibel Fcn Test </a><!--button starts beeping noise-->
+	<a href="#one" onclick="decibel();" class="w3-btn w3-black"> Play </a><!--button starts beeping noise-->
 	
 	<p> Were you able to hear the sound? </p> 
 	<a href="#two" onclick="yesAdd1();" class="w3-btn w3-black"> Yes </a><!--button adds one to yes count-->	
