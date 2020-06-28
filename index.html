@@ -50,10 +50,7 @@ None that I know of
 	function dBFSToGain(dbfs) {  
   	return Math.pow(10, dbfs / 20);
 	}
-	
-	//initializing fcn parameter variables for frequency and decibel 
-	var freq = 0;
-	var decibel = 0; 
+	 
 	
 	//plays sounds on left headphone
 	function decibel_L(freq, decibel){
@@ -179,7 +176,7 @@ None that I know of
 	
     	<div id="content" class="w3-container">
         <p>Press the button below to hear the first sound. </p>    
-	<a href="#one" onclick="decibel_R();" class="w3-btn w3-green"> Play </a><!--button starts beeping noise-->
+	<a href="#one" onclick="decibel_R(500,1);" class="w3-btn w3-green"> Play </a><!--button starts beeping noise-->
 	
 	<p> Where were you able to hear the sound? </p> 
 	<a href="#two" onclick="yesAdd1();" class="w3-btn w3-black"> Left </a><!--button adds one to yes count-->	
