@@ -52,7 +52,43 @@ None that I know of
 	}
 	
 	
-	function decibel(){
+	//plays sounds on left headphone
+	function decibel_L(){
+	let audioCtx = new AudioContext()
+
+	// Create nodes
+	let osc = audioCtx.createOscillator()
+	let gain = audioCtx.createGain()
+
+	// Set parameters
+	osc.frequency.value = 500
+	gain.gain.value = 1
+	
+	// Schedule parameter changes
+	
+	// Drop to -12 dBFS at ~1s
+	gain.gain.setValueAtTime(1, 1 - 0.03);
+	gain.gain.linearRampToValueAtTime(dBFSToGain(-100), 1) //changed gain 
+		
+	//Creating Stereo Panner to Output on L Headphone
+	var panNode = audioCtx.createStereoPanner()
+	panNode.pan.value = -1
+	
+	//Connect graph
+	osc.connect(gain)
+	gain.connect(panNode)
+	panNode.connect(audioCtx.destination) 
+	
+	// Schedule start and stop
+	//osc.start()
+		osc.start(0)
+		panNode.gain.exponentialRampToValueAtTime(
+ 		0.00001, context.currentTime + 5)
+	osc.stop(audioCtx.currentTime + 2)
+	}
+	
+	//plays sounds on right headphone
+	function decibel_R(){
 	let audioCtx = new AudioContext()
 
 	// Create nodes
@@ -131,8 +167,7 @@ None that I know of
 	<br>
 	<br>
 	<p style="color:black;font-size:12px;">The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
- 	
-	<p style="color:black;font-size:14px;">THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+	<p style="color:black;font-size:12px;">THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
@@ -141,7 +176,7 @@ None that I know of
 	
     	<div id="content" class="w3-container">
         <p>Press the button below to hear the first sound. </p>    
-	<a href="#one" onclick="decibel();" class="w3-btn w3-green"> Play </a><!--button starts beeping noise-->
+	<a href="#one" onclick="decibel_R();" class="w3-btn w3-green"> Play </a><!--button starts beeping noise-->
 	
 	<p> Where were you able to hear the sound? </p> 
 	<a href="#two" onclick="yesAdd1();" class="w3-btn w3-black"> Left </a><!--button adds one to yes count-->	
@@ -156,7 +191,7 @@ None that I know of
 	
     	<div id="content" class="w3-container">
         <p>Press the button below to hear the first sound. </p>    
-	<a href="#one" onclick="decibel();" class="w3-btn w3-black"> Play </a><!--button starts beeping noise-->
+	<a href="#one" onclick="decibel_R();" class="w3-btn w3-black"> Play </a><!--button starts beeping noise-->
 	
 	<p> Where did you hear the sound? </p> 
 	<a href="#two" onclick="yesAdd1();" class="w3-btn w3-black"> Left </a><!--button adds one to yes count-->	
@@ -172,7 +207,7 @@ None that I know of
 	
     	<div id="content" class="w3-container">
         <p>Press the button below to hear the first sound. </p>    
-	<a href="#one" onclick="decibel();" class="w3-btn w3-black"> Play </a><!--button starts beeping noise-->
+	<a href="#one" onclick="decibel_R();" class="w3-btn w3-black"> Play </a><!--button starts beeping noise-->
 	
 	<p> Were you able to hear the sound? </p> 
 	<a href="#two" onclick="yesAdd1();" class="w3-btn w3-black"> Yes </a><!--button adds one to yes count-->	
