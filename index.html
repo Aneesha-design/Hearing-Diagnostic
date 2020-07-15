@@ -180,7 +180,17 @@ None that I know of
 	<div class="slidecontainer">
  	<p>Use the Slider Below to Adjust the Audio Level:</p>
   	<input type="range" min="1" max="100" value="0">
+	<p>Value: <span id="demo"></span></p>
 	</div>
+		<script>
+	var slider = document.getElementById("myRange");
+	var output = document.getElementById("demo");
+	output.innerHTML = slider.value;
+
+	slider.oninput = function() {
+  	output.innerHTML = this.value;
+	}
+</script>
 		
 	<p> Where were you able to hear the sound? </p> 
 	<a href="#two" onclick="yesAdd1();" class="w3-btn w3-black"> Left </a><!--button adds one to yes count-->	
