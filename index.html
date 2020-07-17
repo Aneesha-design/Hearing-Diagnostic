@@ -177,9 +177,10 @@ Sound is making weird cut off noise and slider isn't tied to audio yet
 	var output = document.getElementById("demo");
 	output.innerHTML = slider.value;
 
-	slider.oninput = function() {
-  	output.innerHTML = this.value;
-	}
+	//slider.oninput = function() { -->
+  	//output.innerHTML = this.value;
+	//} 
+	slider.oninput = decibel(440,1,-1)
 </script>
 		
 	<p> Where were you able to hear the sound? </p> 
