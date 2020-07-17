@@ -56,7 +56,7 @@ Sound is making weird cut off noise and slider isn't tied to audio yet
 	// Schedule parameter changes
 	
 	// Drop to -12 dBFS at ~1s
-	gain.gain.setValueAtTime(1, 1 - 0.03);
+	gain.gain.setValueAtTime(0.5, 1 - 0.03);
 	gain.gain.linearRampToValueAtTime(dBFSToGain(-20), 1) //changed gain 
 		
 	//Creating Stereo Panner to Output on L Headphone
