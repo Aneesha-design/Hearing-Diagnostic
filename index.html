@@ -57,7 +57,7 @@ Sound is making weird cut off noise and slider isn't tied to audio yet
 	
 	// Drop to -12 dBFS at ~1s
 	gain.gain.setValueAtTime(decibel, 1 - 0.03);
-	gain.gain.linearRampToValueAtTime(dBFSToGain(-12), 3) //changed gain 
+	gain.gain.linearRampToValueAtTime(dBFSToGain(-30), 3) //changed gain 
 		
 	//Creating Stereo Panner to Output on L Headphone
 	var panNode = audioCtx.createStereoPanner()
@@ -73,7 +73,7 @@ Sound is making weird cut off noise and slider isn't tied to audio yet
 		osc.start(0)
 		panNode.gain.exponentialRampToValueAtTime(
  		0.00001, context.currentTime + 5)
-	osc.stop(audioCtx.currentTime + 5)
+	osc.stop(audioCtx.currentTime + 2)
 	}
 	
 </script>
