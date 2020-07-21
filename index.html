@@ -146,7 +146,7 @@ Slider isn't tied to audio yet
 	<p> 1. Try to take this test in as quiet of an environment as possible for optimal results. </p>
 	<p> 2. This exam must be used with headphones in order to detect changes in the left/right ear. Use the highest quality of headphones that you have to take this test. </p>
 	<p> 3. Turn your device's volume to the maximum volume setting. The app will not play sounds as loud as the device's full amplitude, but uses this as a scale to calibrate accurate decibel outputs. </p>
-	 <a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	 <a href="#150" class="w3-btn w3-grey w3-round"> Get Started </a>
 	<br> 
 	<br>
 	<br>
@@ -160,7 +160,7 @@ Slider isn't tied to audio yet
 	<p style="color:black;font-size:12px;">The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
 	<p style="color:black;font-size:12px;">THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
-<div class="page" id="one">
+<div class="page" id="150">
 	<div id="header" class="w3-container w3-flat-peter-river">
 		<h1>Audiogram Test</h1>
 	</div>
@@ -169,7 +169,7 @@ Slider isn't tied to audio yet
 	
 	<div class="slidecontainer">
  	<p>Use the Slider Below to Adjust the Audio Level:</p>
-  	<input type="range" min="0" max="1.2" value="0" id="myRange">
+  	<input type="range" min="0" max="100" value="0" id="myRange">
 	<p>Value: <span id="demo"></span></p>
 	</div>
 		<script>
@@ -181,17 +181,17 @@ Slider isn't tied to audio yet
   	//output.innerHTML = this.value;
 	//} 
 	slider.oninput = function(){
-		decibel(440,this.value ,-1)
+		decibel(440,this.value / 10 ,-1)
 	}
 </script>
 		
 	<p> Where were you able to hear the sound? </p> 
-	<a href="#two" onclick="yesAdd1();" class="w3-btn w3-black"> Left </a><!--button adds one to yes count-->	
-	<a href="#two" onclick="noAdd1();" class="w3-btn w3-black"> Right </a><!--button adds one to no count-->
-	<a href="#two" onclick="noAdd1();" class="w3-btn w3-black"> Neither </a><!--button adds one to no count-->
+	<a href="#250" onclick="yesAdd1();" class="w3-btn w3-black"> Left </a><!--button adds one to yes count-->	
+	<a href="#250" onclick="noAdd1();" class="w3-btn w3-black"> Right </a><!--button adds one to no count-->
+	<a href="#250" onclick="noAdd1();" class="w3-btn w3-black"> Neither </a><!--button adds one to no count-->
     	</div>
 </div>
-	<div class="page" id="two">
+	<div class="page" id="250">
 	<div id="header" class="w3-container w3-flat-peter-river">
 		<h1>Audiogram Test</h1>
 	</div>
