@@ -180,7 +180,9 @@ Slider isn't tied to audio yet
 	//slider.oninput = function() { 
   	//output.innerHTML = this.value;
 	//} 
-	slider.oninput = decibel(440,1,-1)
+	slider.oninput = function(){
+		decibel(440,1,-1)
+	}
 </script>
 		
 	<p> Where were you able to hear the sound? </p> 
