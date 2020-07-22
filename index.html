@@ -170,11 +170,9 @@ Slider isn't tied to audio yet
 	<div class="slidecontainer">
  	<p>Use the Slider Below to Adjust the Audio Level:</p>
   	<input type="range" min="0" max="100" value="0" id="myRange">
-	<p>Value: <span id="demo"></span></p>
 	</div>
 		<script>
 	var slider = document.getElementById("myRange");
-	var output = document.getElementById("demo");
 	slider.oninput = function(){
 		decibel(440,this.value / 10 ,-1)
 	}
