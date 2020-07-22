@@ -177,7 +177,7 @@ Need to ask user for data collection and adjust app visuals
 	
 	<div class="slidecontainer">
  	<p>Begin with the Slider in the first position and adjust it to the next level until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, drag the slider to the starting position and then back to the desired level. </p>
-  	<input type="range" list ="tickmarks" min="0" max="100" value="0" id="myRange">
+  	<input type="range" list ="steplist" min="0" max="100" value="0" id="myRange">
 	</div>
 		<datalist id="tickmarks">
   		<option value="0" label="0%"></option>
@@ -193,15 +193,14 @@ Need to ask user for data collection and adjust app visuals
   		<option value="100" label="100%"></option>
 		</datalist>
 		
-		<ul class="range-labels">
- 		<li class="active selected">Today</li>
-  		<li>2 days</li>
-  		<li>3 days</li>
-  		<li>4 days</li>
-  		<li>5 days</li>
-  		<li>6 days</li>
-  		<li>7 days</li>
-		</ul>
+		<datalist id="steplist">
+    		<option>0</option>
+    		<option>25</option>
+   		<option>50</option>
+    		<option>75</option>
+    		<option>100</option>
+		</datalist>
+		
 		<script>
 	var slider = document.getElementById("myRange");
 	slider.oninput = function(){
