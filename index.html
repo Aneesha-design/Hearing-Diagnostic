@@ -175,11 +175,6 @@ Slider isn't tied to audio yet
 		<script>
 	var slider = document.getElementById("myRange");
 	var output = document.getElementById("demo");
-	output.innerHTML = slider.value;
-
-	//slider.oninput = function() { 
-  	//output.innerHTML = this.value;
-	//} 
 	slider.oninput = function(){
 		decibel(440,this.value / 10 ,-1)
 	}
@@ -207,7 +202,7 @@ Slider isn't tied to audio yet
     	</div>
 </div>
 	</div>
-	<div class="page" id="three">
+	<div class="page" id="500">
 	<div id="header" class="w3-container w3-flat-peter-river">
 		<h1>Audiogram Test</h1>
 	</div>
