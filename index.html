@@ -43,14 +43,17 @@ Need to ask user for data collection and adjust app visuals
 	
 	function buttonChange(Idnum, color) {
 		var button = document.getElementById('button' +Idnum);
-		
-	for (i = 1; i <= 4; i++) // Change the i <= # for how many buttons you have
+	
+	
+	for (i = 1; i <= 4; i++) {                 // Change the i <= # for how many buttons you have
 		var otherbuttons = document.getElementById('button' +Idnum);
 		otherbuttons.className = "w3-btn w3-black";
 		
 	}
 	
 	button.className = color;
+		
+	}		
 	
 	
 	//imported decibel functions
@@ -234,7 +237,7 @@ Need to ask user for data collection and adjust app visuals
 		
 		
 	<p> What is the lowest slider level where you could hear the noise? </p> 
-	<a id="button1" onclick="yesAdd1(); buttonChange('.w3-flat-belize-hole');" class="w3-btn w3-black"> 1</a><!--button adds one to yes count-->	
+	<a id="button1" onclick="yesAdd1(); buttonChange(1,'.w3-flat-belize-hole');" class="w3-btn w3-black"> 1</a><!--button adds one to yes count-->	
 	<a id="button2" onclick="noAdd1();" class="w3-btn w3-black"> 2 </a><!--button adds one to no count-->
 	<a onclick="yesAdd1();" class="w3-btn w3-black"> 3 </a><!--button adds one to yes count-->	
 	<a onclick="noAdd1();" class="w3-btn w3-black"> 4 </a><!--button adds one to no count-->	
