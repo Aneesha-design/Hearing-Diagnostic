@@ -256,13 +256,88 @@ Need to ask user for data collection and adjust app visuals
 	<br>
 	<br>
 	<br>
-	<a href="#250" class="w3-btn w3-black"> Next </a> <!--button to take user to the next page-->
-		
+	<a href="#250" class="w3-btn w3-black"> Next </a> <!--button to take user to the next page-->	
     	</div>
-</div>
+	
+	
 	
 	
 	<div class="page" id="250">
+	<div id="header" class="w3-container w3-flat-peter-river">
+		<h1>Audiogram Test</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+	
+	<div class="slidecontainer">
+ 	<p>Begin with the Slider in the first position and adjust it to the next level until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, drag the slider to the starting position and then back to the desired level. </p>
+  	<input type="range" list ="steplist" min="0" max="100" value="0" id="myRange" data-slider-ticks-labels='["$0", "$10", "$20", "$30", "$40", "$50", "$60", "$70", "$80", "$90", "$100"]'>
+	</div>
+
+		<datalist id="tickmarks">
+  		<option value="0" label="0%"></option>
+ 		<option value="10" label="10%"></option>
+  		<option value="20" label="20%"></option>
+  		<option value="30" label="30%"></option>
+  		<option value="40" label="40%"></option>
+  		<option value="50" label="50%"></option>
+  		<option value="60" label="60%"></option>
+  		<option value="70" label="70%"></option>
+  		<option value="80" label="80%"></option>
+  		<option value="90" label="90%"></option>
+  		<option value="100" label="100%"></option>
+		</datalist>
+		
+		<datalist id="steplist">
+    		<option>0</option>
+    		<option>10</option>
+   		<option>20</option>
+    		<option>30</option>
+    		<option>40</option>
+		<option>50</option>
+   		<option>60</option>
+    		<option>70</option>
+    		<option>80</option>
+		<option>90</option>
+		<option>100</option>
+		</datalist>
+		
+	<script>
+	var slider = document.getElementById("myRange");
+	slider.oninput = function(){
+		decibel(125,this.value / 10 ,-1)
+	}
+	</script>
+		
+		
+	<p> What is the lowest slider level where you could hear the noise? </p> 
+	<a id="button1" onclick="buttonChange(1,'w3-flat-belize-hole');" class="w3-btn w3-black"> 1 </a><!--button adds one to yes count-->	
+	<a id="button2" onclick="noAdd1();" class="w3-btn w3-black"> 2 </a><!--button adds one to no count-->
+	<a onclick="yesAdd1();" class="w3-btn w3-black"> 3 </a><!--button adds one to yes count-->	
+	<a onclick="noAdd1();" class="w3-btn w3-black"> 4 </a><!--button adds one to no count-->	
+	<a onclick="yesAdd1():" class="w3-btn w3-black"> 5 </a><!--button adds one to yes count-->	
+	<a onclick="noAdd1();" class="w3-btn w3-black"> 6 </a><!--button adds one to no count-->
+		
+	<p> Where were you able to hear the sound? </p> 
+	<a onclick="yesAdd1();" class="w3-btn w3-black"> Left </a><!--button adds one to yes count-->	
+	<a onclick="noAdd1();" class="w3-btn w3-black"> Right </a><!--button adds one to no count-->
+	<br>
+	<br>
+	<br>
+	<br>
+		<button id="button3" onclick= "buttonChange(3,'w3-flat-belize-hole');" class ="w3-btn w3-black"> Test </button>
+	
+	<br>
+	<br>
+	<br>
+	<a href="#20" class="w3-btn w3-black"> Next </a> <!--button to take user to the next page-->
+		
+    	</div>
+		
+</div>
+	
+	
+	<div class="page" id="20">
 	<div id="header" class="w3-container w3-flat-peter-river">
 		<h1>Audiogram Test</h1>
 	</div>
@@ -277,7 +352,7 @@ Need to ask user for data collection and adjust app visuals
     	</div>
 </div>
 	</div>
-	<div class="page" id="500">
+	<div class="page" id="two">
 	<div id="header" class="w3-container w3-flat-peter-river">
 		<h1>Audiogram Test</h1>
 	</div>
@@ -287,8 +362,8 @@ Need to ask user for data collection and adjust app visuals
 	<a href="#one" onclick="decibel_R();" class="w3-btn w3-black"> Play </a><!--button starts beeping noise-->
 	
 	<p> Were you able to hear the sound? </p> 
-	<a href="#two" onclick="yesAdd1();" class="w3-btn w3-black"> Yes </a><!--button adds one to yes count-->	
-	<a href="#two" onclick="noAdd1();" class="w3-btn w3-black"> No </a><!--button adds one to no count-->
+	<a href="#content" onclick="yesAdd1();" class="w3-btn w3-black"> Yes </a><!--button adds one to yes count-->	
+	<a href="#content" onclick="noAdd1();" class="w3-btn w3-black"> No </a><!--button adds one to no count-->
     	</div>
 </div>
 	<footer class="w3-bottom w3-container w3-flat-peter-river">
