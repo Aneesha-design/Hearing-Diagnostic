@@ -238,7 +238,7 @@ Need to ask user for data collection and adjust app visuals
 <p> What is the lowest level where you could hear the noise? </p> 
 <!--BUTTONS-->
 	<button id="button1" onclick="buttonChange(1,'w3-btn w3-flat-belize-hole'); decibel(125,0.091,-1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 125 Hz sound at 10 dB-->
-   	<button id="button2" onclick="decibel(125,0.182,-1); buttonChange(2,'w3-btn w3-flat-belize-hole');" class="w3-btn w3-black"> 2 </button> <!--button plays a 125 Hz sound at 20 dB-->
+   	<button id="button2" onclick="buttonChange(2,'w3-btn w3-flat-belize-hole'); decibel(125,0.182,-1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 125 Hz sound at 20 dB-->
    	<button id="button3" onclick="decibel(125,0.273,-1); buttonChange(3,'w3-btn w3-flat-belize-hole');" class="w3-btn w3-black"> 3 </button> <!--button plays a 125 Hz sound at 30 dB-->
 	<button id="button4" onclick="decibel(125,0.3636,-1); buttonChange(4,'w3-btn w3-flat-belize-hole');" class="w3-btn w3-black"> 4 </button> <!--button plays a 125 Hz sound at 40 dB-->
 	<button id="button5" onclick="decibel(125,0.4545,-1); buttonChange(5,'w3-btn w3-flat-belize-hole');" class="w3-btn w3-black"> 5 </button> <!--button plays a 125 Hz sound at 50 dB-->
@@ -247,7 +247,7 @@ Need to ask user for data collection and adjust app visuals
 	<button id="button8" onclick="decibel(125,0.72727,-1); buttonChange(8,'w3-btn w3-flat-belize-hole');" class="w3-btn w3-black"> 8 </button> <!--button plays a 125 Hz sound at 80 dB-->
 	<button id="button9" onclick="decibel(125,0.8181,-1); buttonChange(9,'w3-btn w3-flat-belize-hole');" class="w3-btn w3-black"> 9 </button> <!--button plays a 125 Hz sound at 90 dB-->
 	<button id="button10" onclick="decibel(125,0.909,-1); buttonChange(10,'w3-btn w3-flat-belize-hole');" class="w3-btn w3-black"> 10 </button> <!--button plays a 125 Hz sound at 100 dB-->
-	<button id="button11" onclick="decibel(125,1,-1); buttonChange(11,'w3-btn w3-flat-belize-hole');" class="w3-btn w3-black"> 11 </button> <!--button plays a 125 Hz sound at 110 dB-->
+	<button id="button11" onclick="buttonChange(11,'w3-btn w3-flat-belize-hole'); decibel(125,1,-1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 125 Hz sound at 110 dB-->
 	
 	<p> Where were you able to hear the sound? </p> 
 	<button id="button12" onclick= "buttonChange(12,'w3-btn w3-flat-belize-hole');" class="w3-btn w3-black"> Left </button><!--button adds one to yes count-->	
