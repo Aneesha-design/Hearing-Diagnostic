@@ -40,11 +40,12 @@ Need to ask user for data collection and adjust app visuals
        alert("This file last modified  " + docMod);
        console.log("This file last modified  " + docMod);
 	
+	var arr = new Array();
+	
 	
 	function buttonChange(Idnum, color, result) {
 	var button = document.getElementById('button' +Idnum);
-	var arr = new Array();
-    	arr.push(result)
+	arr.append(result)
 		
 	for (i = 1; i <= 4; i++) {                 // Change the i <= # for how many buttons you have
 	var otherbuttons = document.getElementById('button' +Idnum);
@@ -95,13 +96,6 @@ Need to ask user for data collection and adjust app visuals
 		panNode.gain.exponentialRampToValueAtTime(
  		0.00001, context.currentTime + 5)
 	osc.stop(audioCtx.currentTime + 2)
-	}
-	
-	
-	//this function will append data point to list
-	var arr = [0,0]
-	function data(dec){
-		arr.push(dec)
 	}
 	
 	
@@ -436,7 +430,7 @@ Need to ask user for data collection and adjust app visuals
 <html>
 <head>
 <script>
-window.onload = function () {
+window.onload = function (arr) {
 	var chart = new CanvasJS.Chart("chartContainer", {
 	title:{
 		text: "Audiogram"
@@ -475,12 +469,12 @@ window.onload = function () {
         axisYIndex: 2,
 		dataPoints: [
 	    { x: 125, y: arr[0] }, 
-            { x: 250, y: arr[1] },
-            { x: 500, y: arr[2] },
-            { x: 1000, y: arr[3] },
-            { x: 2000, y: arr[4] },
-            { x: 4000, y: arr[5] },
-            { x: 8000, y: arr[6] },
+            { x: 250, y: arr[2] },
+            { x: 500, y: arr[4] },
+            { x: 1000, y: arr[6] },
+            { x: 2000, y: arr[8] },
+            { x: 4000, y: arr[10] },
+            { x: 8000, y: arr[12] },
 
 		]
 	},
@@ -491,12 +485,12 @@ window.onload = function () {
 		axisYIndex: 2,
 		showInLegend: true,
 		dataPoints: [
-	    { x: 125, y: arr[7] }, 
-            { x: 250, y: arr[8] },
-            { x: 500, y: arr[9] },
-            { x: 1000, y: arr[10] },
-            { x: 2000, y: arr[11] },
-            { x: 4000, y: arr[12] },
+	    { x: 125, y: arr[1] }, 
+            { x: 250, y: arr[3] },
+            { x: 500, y: arr[5] },
+            { x: 1000, y: arr[7] },
+            { x: 2000, y: arr[9] },
+            { x: 4000, y: arr[11] },
             { x: 8000, y: arr[13] },
 		
 		]
