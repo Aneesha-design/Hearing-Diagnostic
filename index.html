@@ -129,6 +129,7 @@ Need to ask user for data collection and adjust app visuals
 	},
 	axisY:[{
 		title: "Volume (db)",
+		reversed: true,
     minimum: 10,
     maximum: 110
 	
@@ -260,12 +261,20 @@ function toogleDataSeries(e){
 </div>
 	
 <div id="content" class="w3-container">
-	<p>This audiogram exam will help find out if you may have hearing loss and help to tell you the extent of your hearing loss. In order to perform this exam, 
-	follow all of the instructions listed below: </p>
-	<p> 1. Try to take this test in as quiet of an environment as possible for optimal results. </p>
-	<p> 2. This exam must be used with headphones in order to detect changes in the left/right ear. Use the highest quality of headphones that you have to take this test. </p>
-	<p> 3. Turn your device's volume to the maximum volume setting. The app will not play sounds as loud as the device's full amplitude, but uses this as a scale to calibrate accurate decibel outputs. </p>
-	 <a href="#125L" class="w3-btn w3-grey w3-round"> Get Started </a>
+	<p>This audiogram exam will help find out if you may have hearing loss and help to tell you the extent of your hearing loss. Before you begin, 
+	follow the instructions listed below: </p>
+	<p> 1. This exam must be used with headphones in order to detect changes in the left/right ear. Use the highest quality of headphones that you have to take this test. </p>
+	<p> 2. Before we begin, we are going to calibrate your device to an appropriate sound level. To do this, we are going to simulate a 40 dB sound. 
+		<b>Without headphones</b>, rub your hands together closely in front of your nose. Observe the volume of sound produced. Then, with your <b>headphones on</b>, click the button
+		below. Adjust the sound level of your device so that both sound levels match (hands rubbing without headphones, and button audio with headphones. </p>
+		<br>
+		<button id="button0" onclick="decibel(125,0.3636,0);" class="w3-btn w3-black"> Click Me! </button>
+		<br>
+	<p> 3. Try to take this test in a quiet environment as possible for optimal results. </p>
+		<br>
+		<br>
+		<br>
+	 <a href="#125L" class="w3-btn w3-grey w3-round"> I'm Ready! </a>
 	<br> 
 	<br>
 	<br>
@@ -286,7 +295,7 @@ function toogleDataSeries(e){
 <!--125DB LEFT EAR-->
 <div class="page" id="125L">
 	<div id="header" class="w3-container w3-flat-peter-river">
-		<h1>125 HZ Part 1</h1>
+		<h1>Step 2 / 15</h1>
 	</div>
 	
 <div id="content" class="w3-container">
@@ -331,7 +340,7 @@ function toogleDataSeries(e){
 <!--125DB RIGHT EAR-->
 <div class="page" id="125R">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>125 HZ Part 2</h1>
+		<h1>Step 3 / 15</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
@@ -377,23 +386,23 @@ function toogleDataSeries(e){
 <!--250DB LEFT EAR-->
 <div class="page" id="250L">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>250 HZ Part 1</h1>
+		<h1>Step 4 / 15</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
 	<br>
 <p> Click the buttons below to hear the frequency. Starting at "1", click the next button until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, simply click the buttons again </p>
-	<button id="button73" onclick="decibel(250,0.091,-1);" class="w3-btn w3-black"> 1 </button>
-	<button id="button74" onclick="decibel(250,0.182,-1);" class="w3-btn w3-black"> 2 </button>
-	<button id="button75" onclick="decibel(250,0.273,-1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 125 Hz sound at 30 dB-->
-	<button id="button76" onclick="decibel(250,0.3636,-1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 125 Hz sound at 40 dB-->
-	<button id="button77" onclick="decibel(250,0.4545,-1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 125 Hz sound at 50 dB-->
-	<button id="button78" onclick="decibel(250,0.54545,-1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 125 Hz sound at 60 dB-->
-	<button id="button79" onclick="decibel(250,0.6363,-1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 125 Hz sound at 70 dB-->
-	<button id="button80" onclick="decibel(250,0.72727,-1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 125 Hz sound at 80 dB-->
-	<button id="button81" onclick="decibel(250,0.8181,-1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 125 Hz sound at 90 dB-->
-	<button id="button82" onclick="decibel(250,0.90,-1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 125 Hz sound at 100 dB-->
-	<button id="button83" onclick="decibel(250,1,-1);" class="w3-btn w3-black"> 11 </button>
+	<button id="button73" onclick="decibel(250,0.02,-1);" class="w3-btn w3-black"> 1 </button>
+	<button id="button74" onclick="decibel(250,0.04,-1);" class="w3-btn w3-black"> 2 </button>
+	<button id="button75" onclick="decibel(250,0.06,-1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 125 Hz sound at 30 dB-->
+	<button id="button76" onclick="decibel(250,0.08,-1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 125 Hz sound at 40 dB-->
+	<button id="button77" onclick="decibel(250,0.10,-1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 125 Hz sound at 50 dB-->
+	<button id="button78" onclick="decibel(250,0.12,-1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 125 Hz sound at 60 dB-->
+	<button id="button79" onclick="decibel(250,0.14,-1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 125 Hz sound at 70 dB-->
+	<button id="button80" onclick="decibel(250,0.16,-1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 125 Hz sound at 80 dB-->
+	<button id="button81" onclick="decibel(250,0.18,-1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 125 Hz sound at 90 dB-->
+	<button id="button82" onclick="decibel(250,0.20,-1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 125 Hz sound at 100 dB-->
+	<button id="button83" onclick="decibel(250,0.22,-1);" class="w3-btn w3-black"> 11 </button>
 		
 <p> What is the lowest level where you could hear the noise? Please click ONE button only.</p> 
 
@@ -424,24 +433,24 @@ function toogleDataSeries(e){
 <!--250DB RIGHT EAR-->
 <div class="page" id="250R">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>250 HZ Part 2</h1>
+		<h1>Step 5 / 15</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
 	
 	<br>
 <p> Click the buttons below to hear the frequency. Starting at "1", click the next button until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, simply click the buttons again </p>
-	<button id="button49" onclick="decibel(250,0.091,1);" class="w3-btn w3-black"> 1 </button>
-	<button id="button50" onclick="decibel(250,0.182,1);" class="w3-btn w3-black"> 2 </button>
-	<button id="button51" onclick="decibel(250,0.273,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 125 Hz sound at 30 dB-->
-	<button id="button52" onclick="decibel(250,0.3636,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 125 Hz sound at 40 dB-->
-	<button id="button53" onclick="decibel(250,0.4545,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 125 Hz sound at 50 dB-->
-	<button id="button54" onclick="decibel(250,0.54545,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 125 Hz sound at 60 dB-->
-	<button id="button55" onclick="decibel(250,0.6363,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 125 Hz sound at 70 dB-->
-	<button id="button56" onclick="decibel(250,0.72727,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 125 Hz sound at 80 dB-->
-	<button id="button57" onclick="decibel(250,0.8181,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 125 Hz sound at 90 dB-->
-	<button id="button58" onclick="decibel(250,0.90,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 125 Hz sound at 100 dB-->
-	<button id="button59" onclick="decibel(250,1,1);" class="w3-btn w3-black"> 11 </button>
+	<button id="button49" onclick="decibel(250,0.02,1);" class="w3-btn w3-black"> 1 </button>
+	<button id="button50" onclick="decibel(250,0.04,1);" class="w3-btn w3-black"> 2 </button>
+	<button id="button51" onclick="decibel(250,0.06,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 125 Hz sound at 30 dB-->
+	<button id="button52" onclick="decibel(250,0.08,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 125 Hz sound at 40 dB-->
+	<button id="button53" onclick="decibel(250,0.10,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 125 Hz sound at 50 dB-->
+	<button id="button54" onclick="decibel(250,0.12,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 125 Hz sound at 60 dB-->
+	<button id="button55" onclick="decibel(250,0.14,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 125 Hz sound at 70 dB-->
+	<button id="button56" onclick="decibel(250,0.16,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 125 Hz sound at 80 dB-->
+	<button id="button57" onclick="decibel(250,0.18,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 125 Hz sound at 90 dB-->
+	<button id="button58" onclick="decibel(250,0.20,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 125 Hz sound at 100 dB-->
+	<button id="button59" onclick="decibel(250,0.22,1);" class="w3-btn w3-black"> 11 </button>
 		
 <p> What is the lowest level where you could hear the noise? Please click ONE button only.</p> 
 <!--BUTTONS-->
@@ -473,23 +482,23 @@ function toogleDataSeries(e){
 <!--500DB LEFT EAR-->
 <div class="page" id="500L">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>500 HZ Part 1</h1>
+		<h1>Step 6 / 15</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
 	<br>
 <p> Click the buttons below to hear the frequency. Starting at "1", click the next button until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, simply click the buttons again </p>
-	<button id="button97" onclick="decibel(500,0.091,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
-	<button id="button98" onclick="decibel(500,0.182,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
-	<button id="button99" onclick="decibel(500,0.273,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
-	<button id="button100" onclick="decibel(500,0.3636,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
-	<button id="button101" onclick="decibel(500,0.4545,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
-	<button id="button102" onclick="decibel(500,0.54545,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
-	<button id="button103" onclick="decibel(500,0.6363,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
-	<button id="button104" onclick="decibel(500,0.72727,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
-	<button id="button105" onclick="decibel(500,0.8181,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
-	<button id="button106" onclick="decibel(500,0.90,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
-	<button id="button107" onclick="decibel(500,1,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
+	<button id="button97" onclick="decibel(500,0.002,-1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
+	<button id="button98" onclick="decibel(500,0.004,-1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
+	<button id="button99" onclick="decibel(500,0.006,-1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
+	<button id="button100" onclick="decibel(500,0.008,-1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
+	<button id="button101" onclick="decibel(500,0.010,-1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
+	<button id="button102" onclick="decibel(500,0.012,-1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
+	<button id="button103" onclick="decibel(500,0.014,-1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
+	<button id="button104" onclick="decibel(500,0.016,-1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
+	<button id="button105" onclick="decibel(500,0.018,-1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
+	<button id="button106" onclick="decibel(500,0.020,-1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
+	<button id="button107" onclick="decibel(500,0.022,-1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
 		
 <p> What is the lowest level where you could hear the noise? Please click ONE button only.</p> 
 
@@ -519,23 +528,23 @@ function toogleDataSeries(e){
 <!--500DB RIGHT EAR-->
 <div class="page" id="500R">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>500 HZ Part 2</h1>
+		<h1>Step 7 / 15 - You're halfway there!</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
 	<br>
 <p> Click the buttons below to hear the frequency. Starting at "1", click the next button until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, simply click the buttons again </p>
-	<button id="button121" onclick="decibel(500,0.091,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
-	<button id="button122" onclick="decibel(500,0.182,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
-	<button id="button123" onclick="decibel(500,0.273,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
-	<button id="button124" onclick="decibel(500,0.3636,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
-	<button id="button125" onclick="decibel(500,0.4545,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
-	<button id="button126" onclick="decibel(500,0.54545,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
-	<button id="button127" onclick="decibel(500,0.6363,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
-	<button id="button128" onclick="decibel(500,0.72727,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
-	<button id="button129" onclick="decibel(500,0.8181,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
-	<button id="button130" onclick="decibel(500,0.90,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
-	<button id="button131" onclick="decibel(500,1,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
+	<button id="button121" onclick="decibel(500,0.002,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
+	<button id="button122" onclick="decibel(500,0.004,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
+	<button id="button123" onclick="decibel(500,0.006,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
+	<button id="button124" onclick="decibel(500,0.008,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
+	<button id="button125" onclick="decibel(500,0.010,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
+	<button id="button126" onclick="decibel(500,0.012,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
+	<button id="button127" onclick="decibel(500,0.014,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
+	<button id="button128" onclick="decibel(500,0.016,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
+	<button id="button129" onclick="decibel(500,0.018,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
+	<button id="button130" onclick="decibel(500,0.020,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
+	<button id="button131" onclick="decibel(500,0.022,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
 		
 <p> What is the lowest level where you could hear the noise? Please click ONE button only.</p> 
 
@@ -566,23 +575,23 @@ function toogleDataSeries(e){
 <!--1000DB LEFT EAR-->
 <div class="page" id="1000L">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>1000 HZ Part 1</h1>
+		<h1>Step 8 / 15</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
 	<br>
 <p> Click the buttons below to hear the frequency. Starting at "1", click the next button until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, simply click the buttons again </p>
-	<button id="button145" onclick="decibel(1000,0.091,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
-	<button id="button146" onclick="decibel(1000,0.182,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
-	<button id="button147" onclick="decibel(1000,0.273,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
-	<button id="button148" onclick="decibel(1000,0.3636,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
-	<button id="button149" onclick="decibel(1000,0.4545,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
-	<button id="button150" onclick="decibel(1000,0.54545,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
-	<button id="button151" onclick="decibel(1000,0.6363,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
-	<button id="button152" onclick="decibel(1000,0.72727,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
-	<button id="button153" onclick="decibel(1000,0.8181,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
-	<button id="button154" onclick="decibel(1000,0.90,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
-	<button id="button155" onclick="decibel(1000,1,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
+	<button id="button145" onclick="decibel(1000,0.001,-1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
+	<button id="button146" onclick="decibel(1000,0.002,-1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
+	<button id="button147" onclick="decibel(1000,0.003,-1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
+	<button id="button148" onclick="decibel(1000,0.004,-1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
+	<button id="button149" onclick="decibel(1000,0.005,-1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
+	<button id="button150" onclick="decibel(1000,0.006,-1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
+	<button id="button151" onclick="decibel(1000,0.007,-1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
+	<button id="button152" onclick="decibel(1000,0.0.008,-1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
+	<button id="button153" onclick="decibel(1000,0.009,-1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
+	<button id="button154" onclick="decibel(1000,0.010,-1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
+	<button id="button155" onclick="decibel(1000,0.011,-1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
 		
 <p> What is the lowest level where you could hear the noise? Please click ONE button only.</p> 
 
@@ -614,23 +623,23 @@ function toogleDataSeries(e){
 <!--1000DB RIGHT EAR-->
 <div class="page" id="1000R">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>1000 HZ Part 2</h1>
+		<h1>Step 9 / 15</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
 	<br>
 <p> Click the buttons below to hear the frequency. Starting at "1", click the next button until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, simply click the buttons again </p>
-	<button id="button169" onclick="decibel(1000,0.091,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
-	<button id="button170" onclick="decibel(1000,0.182,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
-	<button id="button171" onclick="decibel(1000,0.273,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
-	<button id="button172" onclick="decibel(1000,0.3636,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
-	<button id="button173" onclick="decibel(1000,0.4545,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
-	<button id="button174" onclick="decibel(1000,0.54545,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
-	<button id="button175" onclick="decibel(1000,0.6363,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
-	<button id="button176" onclick="decibel(1000,0.72727,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
-	<button id="button177" onclick="decibel(1000,0.8181,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
-	<button id="button178" onclick="decibel(1000,0.90,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
-	<button id="button179" onclick="decibel(1000,1,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
+	<button id="button169" onclick="decibel(1000,0.001,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
+	<button id="button170" onclick="decibel(1000,0.002,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
+	<button id="button171" onclick="decibel(1000,0.003,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
+	<button id="button172" onclick="decibel(1000,0.004,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
+	<button id="button173" onclick="decibel(1000,0.005,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
+	<button id="button174" onclick="decibel(1000,0.006,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
+	<button id="button175" onclick="decibel(1000,0.007,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
+	<button id="button176" onclick="decibel(1000,0.008,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
+	<button id="button177" onclick="decibel(1000,0.009,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
+	<button id="button178" onclick="decibel(1000,0.010,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
+	<button id="button179" onclick="decibel(1000,0.011,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
 		
 <p> What is the lowest level where you could hear the noise? Please click ONE button only.</p> 
 
@@ -662,23 +671,23 @@ function toogleDataSeries(e){
 <!--2000DB LEFT EAR-->
 <div class="page" id="2000L">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>2000 HZ Part 1</h1>
+		<h1>Step 10 / 15</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
 	<br>
 <p> Click the buttons below to hear the frequency. Starting at "1", click the next button until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, simply click the buttons again </p>
-	<button id="button193" onclick="decibel(2000,0.091,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
-	<button id="button194" onclick="decibel(2000,0.182,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
-	<button id="button195" onclick="decibel(2000,0.273,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
-	<button id="button196" onclick="decibel(2000,0.3636,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
-	<button id="button197" onclick="decibel(2000,0.4545,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
-	<button id="button198" onclick="decibel(2000,0.54545,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
-	<button id="button199" onclick="decibel(2000,0.6363,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
-	<button id="button200" onclick="decibel(2000,0.72727,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
-	<button id="button201" onclick="decibel(2000,0.8181,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
-	<button id="button202" onclick="decibel(2000,0.90,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
-	<button id="button203" onclick="decibel(2000,1,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
+	<button id="button193" onclick="decibel(2000,0.0005,-1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
+	<button id="button194" onclick="decibel(2000,0.001,-1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
+	<button id="button195" onclick="decibel(2000,0.0015,-1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
+	<button id="button196" onclick="decibel(2000,0.0020,-1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
+	<button id="button197" onclick="decibel(2000,0.0025,-1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
+	<button id="button198" onclick="decibel(2000,0.0030,-1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
+	<button id="button199" onclick="decibel(2000,0.0035,-1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
+	<button id="button200" onclick="decibel(2000,0.0040,-1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
+	<button id="button201" onclick="decibel(2000,0.0045,-1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
+	<button id="button202" onclick="decibel(2000,0.0050,-1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
+	<button id="button203" onclick="decibel(2000,0.0055,-1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
 		
 <p> What is the lowest level where you could hear the noise? Please click ONE button only.</p> 
 
@@ -710,23 +719,23 @@ function toogleDataSeries(e){
         <!--2000DB RIGHT EAR-->
 <div class="page" id="2000R">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>2000 HZ Part 2</h1>
+		<h1>Step 11 / 15</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
 	<br>
 <p> Click the buttons below to hear the frequency. Starting at "1", click the next button until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, simply click the buttons again </p>
-	<button id="button217" onclick="decibel(2000,0.091,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
-	<button id="button218" onclick="decibel(2000,0.182,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
-	<button id="button219" onclick="decibel(2000,0.273,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
-	<button id="button220" onclick="decibel(2000,0.3636,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
-	<button id="button221" onclick="decibel(2000,0.4545,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
-	<button id="button222" onclick="decibel(2000,0.54545,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
-	<button id="button223" onclick="decibel(2000,0.6363,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
-	<button id="button224" onclick="decibel(2000,0.72727,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
-	<button id="button225" onclick="decibel(2000,0.8181,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
-	<button id="button226" onclick="decibel(2000,0.90,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
-	<button id="button227" onclick="decibel(2000,1,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
+	<button id="button217" onclick="decibel(2000,0.0005,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
+	<button id="button218" onclick="decibel(2000,0.001,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
+	<button id="button219" onclick="decibel(2000,0.0015,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
+	<button id="button220" onclick="decibel(2000,0.002,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
+	<button id="button221" onclick="decibel(2000,0.0025,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
+	<button id="button222" onclick="decibel(2000,0.003,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
+	<button id="button223" onclick="decibel(2000,0.0035,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
+	<button id="button224" onclick="decibel(2000,0.004,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
+	<button id="button225" onclick="decibel(2000,0.0045,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
+	<button id="button226" onclick="decibel(2000,0.005,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
+	<button id="button227" onclick="decibel(2000,0.0055,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
 		
 <p> What is the lowest level where you could hear the noise? Please click ONE button only.</p> 
 
@@ -758,23 +767,23 @@ function toogleDataSeries(e){
   <!--4000DB LEFT EAR-->
 <div class="page" id="4000L">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>4000 HZ Part 1</h1>
+		<h1>Step 12 / 15 - Getting Close!</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
 	<br>
 <p> Click the buttons below to hear the frequency. Starting at "1", click the next button until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, simply click the buttons again </p>
-	<button id="button241" onclick="decibel(4000,0.091,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
-	<button id="button242" onclick="decibel(4000,0.182,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
-	<button id="button243" onclick="decibel(4000,0.273,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
-	<button id="button244" onclick="decibel(4000,0.3636,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
-	<button id="button245" onclick="decibel(4000,0.4545,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
-	<button id="button246" onclick="decibel(4000,0.54545,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
-	<button id="button247" onclick="decibel(4000,0.6363,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
-	<button id="button248" onclick="decibel(4000,0.72727,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
-	<button id="button249" onclick="decibel(4000,0.8181,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
-	<button id="button250" onclick="decibel(4000,0.90,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
-	<button id="button251" onclick="decibel(4000,1,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
+	<button id="button241" onclick="decibel(4000,0.0005,-1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
+	<button id="button242" onclick="decibel(4000,0.001,-1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
+	<button id="button243" onclick="decibel(4000,0.0015,-1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
+	<button id="button244" onclick="decibel(4000,0.002,-1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
+	<button id="button245" onclick="decibel(4000,0.0025,-1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
+	<button id="button246" onclick="decibel(4000,0.0030,-1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
+	<button id="button247" onclick="decibel(4000,0.0035,-1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
+	<button id="button248" onclick="decibel(4000,0.0040,-1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
+	<button id="button249" onclick="decibel(4000,0.0045,-1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
+	<button id="button250" onclick="decibel(4000,0.005,-1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
+	<button id="button251" onclick="decibel(4000,0.0055,-1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
 		
 <p> What is the lowest level where you could hear the noise? Please click ONE button only.</p> 
 
@@ -806,23 +815,23 @@ function toogleDataSeries(e){
      <!--4000DB RIGHT EAR-->
 <div class="page" id="4000R">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>4000 HZ Part 2</h1>
+		<h1>Step 13 / 15 - Closer...</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
 	<br>
 <p> Click the buttons below to hear the frequency. Starting at "1", click the next button until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, simply click the buttons again </p>
-	<button id="button265" onclick="decibel(4000,0.091,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
-	<button id="button266" onclick="decibel(4000,0.182,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
-	<button id="button267" onclick="decibel(4000,0.273,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
-	<button id="button268" onclick="decibel(4000,0.3636,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
-	<button id="button269" onclick="decibel(4000,0.4545,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
-	<button id="button270" onclick="decibel(4000,0.54545,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
-	<button id="button271" onclick="decibel(4000,0.6363,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
-	<button id="button272" onclick="decibel(4000,0.72727,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
-	<button id="button273" onclick="decibel(4000,0.8181,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
-	<button id="button274" onclick="decibel(4000,0.90,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
-	<button id="button275" onclick="decibel(4000,1,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
+	<button id="button265" onclick="decibel(4000,0.0005,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
+	<button id="button266" onclick="decibel(4000,0.001,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
+	<button id="button267" onclick="decibel(4000,0.0015,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
+	<button id="button268" onclick="decibel(4000,0.0020,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
+	<button id="button269" onclick="decibel(4000,0.0025,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
+	<button id="button270" onclick="decibel(4000,0.0030,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
+	<button id="button271" onclick="decibel(4000,0.0035,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
+	<button id="button272" onclick="decibel(4000,0.0040,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
+	<button id="button273" onclick="decibel(4000,0.0045,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
+	<button id="button274" onclick="decibel(4000,0.0050,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
+	<button id="button275" onclick="decibel(4000,0.0055,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
 		
 <p> What is the lowest level where you could hear the noise? Please click ONE button only.</p> 
 
@@ -854,23 +863,23 @@ function toogleDataSeries(e){
      <!--8000DB LEFT EAR-->
 <div class="page" id="8000L">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>8000 HZ Part 1</h1>
+		<h1>Step 14 / 15 - Clooserr...</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
 	<br>
 <p> Click the buttons below to hear the frequency. Starting at "1", click the next button until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, simply click the buttons again </p>
-	<button id="button289" onclick="decibel(8000,0.091,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
-	<button id="button290" onclick="decibel(8000,0.182,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
-	<button id="button291" onclick="decibel(8000,0.273,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
-	<button id="button292" onclick="decibel(8000,0.3636,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
-	<button id="button293" onclick="decibel(8000,0.4545,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
-	<button id="button294" onclick="decibel(8000,0.54545,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
-	<button id="button295" onclick="decibel(8000,0.6363,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
-	<button id="button296" onclick="decibel(8000,0.72727,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
-	<button id="button297" onclick="decibel(8000,0.8181,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
-	<button id="button298" onclick="decibel(8000,0.90,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
-	<button id="button299" onclick="decibel(8000,1,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
+	<button id="button289" onclick="decibel(8000,0.0005,-1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
+	<button id="button290" onclick="decibel(8000,0.001,-1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
+	<button id="button291" onclick="decibel(8000,0.0015,-1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
+	<button id="button292" onclick="decibel(8000,0.0020,-1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
+	<button id="button293" onclick="decibel(8000,0.0025,-1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
+	<button id="button294" onclick="decibel(8000,0.003,-1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
+	<button id="button295" onclick="decibel(8000,0.0035,-1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
+	<button id="button296" onclick="decibel(8000,0.004,-1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
+	<button id="button297" onclick="decibel(8000,0.0045,-1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
+	<button id="button298" onclick="decibel(8000,0.005,-1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
+	<button id="button299" onclick="decibel(8000,0.0055,-1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
 		
 <p> What is the lowest level where you could hear the noise? Please click ONE button only.</p> 
 
@@ -903,23 +912,23 @@ function toogleDataSeries(e){
       <!--8000DB RIGHT EAR-->
 <div class="page" id="8000R">
 <div id="header" class="w3-container w3-flat-peter-river">
-		<h1>8000 HZ Part 2</h1>
+		<h1>Step 15 / 15 - You did it!</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
 	<br>
 <p> Click the buttons below to hear the frequency. Starting at "1", click the next button until you can hear a noise. Once you hear the first noise, do not keep increasing the volume level and answer the next questions. If you need to hear the noise again, simply click the buttons again </p>
-	<button id="button313" onclick="decibel(8000,0.091,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
-	<button id="button314" onclick="decibel(8000,0.182,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
-	<button id="button315" onclick="decibel(8000,0.273,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
-	<button id="button316" onclick="decibel(8000,0.3636,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
-	<button id="button317" onclick="decibel(8000,0.4545,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
-	<button id="button318" onclick="decibel(8000,0.54545,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
-	<button id="button319" onclick="decibel(8000,0.6363,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
-	<button id="button320" onclick="decibel(8000,0.72727,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
-	<button id="button321" onclick="decibel(8000,0.8181,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
-	<button id="button322" onclick="decibel(8000,0.90,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
-	<button id="button323" onclick="decibel(8000,1,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
+	<button id="button313" onclick="decibel(8000,0.0005,1);" class="w3-btn w3-black"> 1 </button> <!--button plays a 500 Hz sound at 10 dB-->
+	<button id="button314" onclick="decibel(8000,0.001,1);" class="w3-btn w3-black"> 2 </button> <!--button plays a 500 Hz sound at 20 dB-->
+	<button id="button315" onclick="decibel(8000,0.0015,1);" class="w3-btn w3-black"> 3 </button> <!--button plays a 500 Hz sound at 30 dB-->
+	<button id="button316" onclick="decibel(8000,0.0020,1);" class="w3-btn w3-black"> 4 </button> <!--button plays a 500 Hz sound at 40 dB-->
+	<button id="button317" onclick="decibel(8000,0.0025,1);" class="w3-btn w3-black"> 5 </button> <!--button plays a 500 Hz sound at 50 dB-->
+	<button id="button318" onclick="decibel(8000,0.003,1);" class="w3-btn w3-black"> 6 </button> <!--button plays a 500 Hz sound at 60 dB-->
+	<button id="button319" onclick="decibel(8000,0.0035,1);" class="w3-btn w3-black"> 7 </button> <!--button plays a 500 Hz sound at 70 dB-->
+	<button id="button320" onclick="decibel(8000,0.004,1);" class="w3-btn w3-black"> 8 </button> <!--button plays a 500 Hz sound at 80 dB-->
+	<button id="button321" onclick="decibel(8000,0.0045,1);" class="w3-btn w3-black"> 9 </button> <!--button plays a 500 Hz sound at 90 dB-->
+	<button id="button322" onclick="decibel(8000,0.005,1);" class="w3-btn w3-black"> 10 </button> <!--button plays a 500 Hz sound at 100 dB-->
+	<button id="button323" onclick="decibel(8000,0.0055,1);" class="w3-btn w3-black"> 11 </button> <!--button plays a 500 Hz sound at 110 dB-->
 		
 <p> What is the lowest level where you could hear the noise? Please click ONE button only.</p> 
 
@@ -942,7 +951,7 @@ function toogleDataSeries(e){
 	<br>
 	<br>
 		
-    	<button id = "moveOn12" onclick = "moveToResults('#Results');" class="w3-btn w3-black"> Next</button> <!--button to take user to the next page-->
+    	<button id = "moveOn12" onclick = "moveToResults('#Results');" class="w3-btn w3-black"> See my results! </button> <!--button to take user to the next page-->
 	</div>
 	
     
@@ -961,6 +970,24 @@ function toogleDataSeries(e){
 	<!--This div contains a script that calls the chart function-->
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<br>
+	<p>
+	<b> What does this chart tell me?</b>
+	</p>
+	<p>
+	This chart is called an <b>audiogram</b>. The frequencies, or pitches of sound you can hear are measured on the horizontal axis, 
+	while the volume of sound you can hear are measured on the vertical axis. Generally speaking, the volume level you hear should
+	be consistently between -10 and 30 dB (decibels) of volume. However, as you age, this level will increase for higher frequencies. </p>
+	<br>
+	<p> Things you should look out for: </p>
+	<br>
+	<p>
+	 - a drastic difference among your hearing in the left and right ears
+	 - a line that is consistently above 30 dB for all frequencies
+	 - a line that slopes towards a decibel level above 30 dB for high frequencies (2000+ Hz)
+	</p>
+		
+		
  </div>
  </div>
 	
